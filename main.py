@@ -41,7 +41,7 @@ async def on_voice_state_update(member, before, after):
 
 @bot.event
 async def on_presence_update(before, after):
-  if before.status is discord.Status.online and after.status is discord.Status.offline:
+  if before.status is not discord.Status.offline and after.status is discord.Status.offline:
     # changed from online to offline
     if after.voice is not None:
       await after.move_to(None)
