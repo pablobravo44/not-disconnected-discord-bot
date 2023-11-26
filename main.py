@@ -35,8 +35,8 @@ async def on_voice_state_update(member, before, after):
   if before.channel is None and after.channel is not None:
     if member.status == discord.Status.offline:
       await member.move_to(None)
-      sensaciones = bot.get_channel(CHANNEL_ID)
-      await sensaciones.send(member.name +", you have to be connected to join a voice channel")
+      channel = bot.get_channel(CHANNEL_ID)
+      await channel.send(member.name +", you have to be connected to join a voice channel")
 
 
 @bot.event
@@ -45,8 +45,8 @@ async def on_presence_update(before, after):
     # changed from online to offline
     if after.voice is not None:
       await after.move_to(None)
-      sensaciones = bot.get_channel(CHANNEL_ID)
-      await sensaciones.send(before.name + ", you cant be on a voice chat while being disconnected")
+      channel = bot.get_channel(CHANNEL_ID)
+      await channel.send(before.name + ", you cant be on a voice chat while being disconnected")
 
 
 keep_alive()
