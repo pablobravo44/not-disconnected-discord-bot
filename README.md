@@ -2,7 +2,7 @@
 
 A discord bot that does not allow any user to send messages or be in a voice channel if they are offline. The user will receive a notification when one of his message is deleteed or when disconnected from a voice chat.
 
-The text channel where the bot will work and send the notifications is defined by the "CHANNEL_ID" variable
+The text channel where the bot will send the notifications related to voice channel discconection is defined by the "CHANNEL_ID" variable
 
 ## Prequisitos
 
@@ -26,5 +26,5 @@ python main.py
 You can follow this tutorial to use it on your own server ( using this repository code ):
 
 ```
-https://www.youtube.com/watch?v=SPTfmiYiuok
+https://www.youtube.com/watch?v=J7Fm7MdZn_E
 ```

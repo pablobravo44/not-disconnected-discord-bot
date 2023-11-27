@@ -18,15 +18,10 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-
-  if message.channel.id == CHANNEL_ID:
-
-    if message.author.status == discord.Status.offline:
-
-      await message.delete()
-      channel = bot.get_channel(message.channel.id)
-      await channel.send(message.author.name +", you have to be connected to send a message")
-
+  if message.author.status == discord.Status.offline:
+    channel = bot.get_channel(message.channel.id)
+    await message.delete()
+    await channel.send(f"{message.author.name}, you have to be connected to send a message")
   await bot.process_commands(message)
 
 
@@ -42,7 +37,6 @@ async def on_voice_state_update(member, before, after):
 @bot.event
 async def on_presence_update(before, after):
   if before.status is not discord.Status.offline and after.status is discord.Status.offline:
-    # changed from online to offline
     if after.voice is not None:
       await after.move_to(None)
       channel = bot.get_channel(CHANNEL_ID)
