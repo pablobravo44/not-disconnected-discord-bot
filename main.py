@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 from discord import Member
-from replit import db
 from keep_alive import keep_alive
 
 TOKEN = "YOUR_BOT_TOKEN"
