@@ -4,7 +4,7 @@ from discord import Member
 from keep_alive import keep_alive
 
 TOKEN = "YOUR_BOT_TOKEN"
-CHANNEL_ID = "YOUR_CHANNEL_ID"
+CHANNEL_ID = YOUR_CHANNEL_ID #Should be an int
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='!', intents=intents)
